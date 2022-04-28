@@ -17,7 +17,7 @@ function counterUp() {
 main.addEventListener("click", counterUp);
 
 document.addEventListener("keypress", function (e) {
-  if (e.key === "Space") {
+  if (e.key === " " || e.key === "Enter") {
     counterUp();
   }
 });
