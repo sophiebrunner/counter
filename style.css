@@ -14,7 +14,9 @@
 }
 
 body {
-  height: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 30% 70%;
 }
 
 .page-header {
@@ -32,18 +34,23 @@ h1 {
 #reset-button {
   padding: 0.5em 1.5em;
   border: 2px solid black;
-  box-shadow: 6px 6px rgb(233, 233, 233);
   font-family: monospace;
   font-size: 1.5rem;
+  box-shadow: 6px 6px rgb(233, 233, 233);
 }
 
 main {
-  height: 100vh;
+  --progress: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, transparent, var(--clr-accent));
-  background-size: 50%;
+  background-image: linear-gradient(
+    to right,
+    var(--clr-accent),
+    var(--clr-accent)
+  );
+  background-size: var(--progress) 100%;
+  background-repeat: no-repeat;
 }
 
 #counting-number {
