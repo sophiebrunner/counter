@@ -11,10 +11,6 @@ const resetButton = document.querySelector("#reset-button");
 let countingNumber = 0;
 let countingColor = 0;
 
-//To fill in the HTML-section with the initial countingNumber-value (which is 0),
-//I declare the innerText of the section with the variable of the countingNumber;
-countingNumberText.innerText = countingNumber;
-
 //I declare the main function of the Counter;
 //The countingNumber will be updated and constantly synchronized with the inner Text of the countingNumber-section;
 //If countingNumber reaches 101, the counter will be resetted (set to 0);
@@ -25,6 +21,11 @@ function counterUp() {
   if (countingNumber === 101) {
     resetCounter();
   }
+}
+
+function resetCounter() {
+  countingNumber = 0;
+  countingNumberText.innerText = countingNumber;
 }
 
 //The second central function of the Counter is filling the background;
@@ -44,11 +45,6 @@ function fillBackground() {
 function resetBackground() {
   countingColor = 0;
   main.style.setProperty("--progress", countingColor + "%");
-}
-
-function resetCounter() {
-  countingNumber = 0;
-  countingNumberText.innerText = countingNumber;
 }
 
 main.addEventListener("click", function () {
